@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1</title>
+</head>
+<body>
+    <header>
+        <h1>Лабораторная работа 2</h1>
+    </header>
+    <div>
+        <input type="button" value="Задание 1" onclick="showForm(1)" />
+        <input type="button" value="Задание 2" onclick="showForm(2)" />
+        <input type="button" value="Задание 3" onclick="showForm(3)" />
+        <input type="button" value="Задание 4" onclick="showForm(4)" />
+        <input type="button" value="Задание 5" onclick="showForm(5)" />
+    </div>
+    <div id="form1">
+        <h3>Задание 1</h3>
+        <p>Вычислить значение выражения по формуле.</p>
+        <p><img class="img1" src="picters/function.png" /></p>
+        <label>Введите x:</label>
+        <input type="text" id="input_x" /><br />
+        <input type="button" value="Вычислить" onclick="calculate()" /><br />
+        <p>Итог: <span id="output_answer"></span></p>
+    </div>
+
+    <div id="form2">
+        <h3>Задание 2</h3>
+        <p>Нахождение площади, высоты, радиусов вписанной и описанной окружностей равностороннего треугольника.</p>
+        <label>Введите сторону а равностороннего треугольника:</label>
+        <input type="text" id="input_a" /> <br />
+        <input type="button" value="Вычислить" onclick="treugolnik()" /><br />
+        <p>Площадь: <span id="s_answer"></span></p>
+        <p>Высота: <span id="h_answer"></span></p>
+        <p>Радиус вписанной окружности: <span id="rv_answer"></span></p>
+        <p>Радиус описанной окружности: <span id="ro_answer"></span></p>
+    </div>
+
+    <div id="form3">
+        <h3>Задание 3</h3>
+        <p>Проверка на подобие двух прямоугольных треугольников по заданным катетам:a, b для первого треугольника и c, d для второго треугольника.</p>
+        <label>Введите величину стороны a:</label>
+        <input type="text" id="storona_a" /><br />
+        <label>Введите величину стороны b:</label>
+        <input type="text" id="storona_b" /><br />
+        <label>Введите величину стороны c:</label>
+        <input type="text" id="storona_c" /><br />
+        <label>Введите величину стороны d:</label>
+        <input type="text" id="storona_d" /><br />
+        <input type="button" value="Сравнить" onclick="sravnenie()" /><br />
+        <p>Треугольники являются подобными: <span id="answer"></span></p>
+    </div>
+
+    <div id="form4">
+        <h3>Задание 4</h3>
+        <p>Вычисление значения функции.</p>
+        <p><img class="img4" src="picters/krivia.png" /></p>
+        <label>Введите x:</label>
+        <input type="text" id="argument" /><br />
+        <input type="button" value="Вычислить" onclick="znach_f()" /><br />
+        <p>Значение функции: <span id="f_answer"></span></p>
+    </div>
+
+    <div id="form5">
+        <h3>Задание 5</h3>
+        <p>Небольшой тир. По заданным координатам проверяется попадание в мишень.</p>
+        <p><img class="img5" src="picters/mishen.png" /></p>
+        <label>Введите значение радиуса:</label>
+        <input type="text" id="rad" /><br />
+        <label>Введите координату x первого выстрела:</label>
+        <input type="text" id="strel_x1" /><br />
+        <label>Введите координату y первого выстрела:</label>
+        <input type="text" id="strel_y1" /><br />
+        <input type="button" value="Проверить" onclick="popal('strel_x1', 'strel_y1', 'rad', 1)" /><br />
+        <p>Результат: <span id="itog1"></span></p>
+        <label>Введите координату x второго выстрела:</label>
+        <input type="text" id="strel_x2" /><br />
+        <label>Введите координату y второго выстрела:</label>
+        <input type="text" id="strel_y2" /><br />
+        <input type="button" value="Проверить" onclick="popal('strel_x2', 'strel_y2', 'rad', 2)" /><br />
+        <p>Результат: <span id="itog2"></span></p>
+        <label>Введите координату x третьего выстрела:</label>
+        <input type="text" id="strel_x3" /><br />
+        <label>Введите координату y третьего выстрела:</label>
+        <input type="text" id="strel_y3" /><br />
+        <input type="button" value="Проверить" onclick="popal('strel_x3', 'strel_y3', 'rad', 3)" /><br />
+        <p>Результат: <span id="itog3"></span><p />
+        <label>Введите координату x четвертого выстрела:</label>
+        <input type="text" id="strel_x4" /><br />
+        <label>Введите координату y четвертого выстрела:</label>
+        <input type="text" id="strel_y4" /><br />
+        <input type="button" value="Проверить" onclick="popal('strel_x4', 'strel_y4', 'rad', 4)" /><br />
+        <p>Результат: <span id="itog4"></span><p />
+        <label>Введите координату x пятого выстрела:</label>
+        <input type="text" id="strel_x5" /><br />
+        <label>Введите координату y пятого выстрела:</label>
+        <input type="text" id="strel_y5" /><br />
+        <input type="button" value="Проверить" onclick="popal('strel_x5', 'strel_y5', 'rad', 5)" /><br />
+        <p>Результат: <span id="itog5"></span><p />
+        <label>Введите координату x шестого выстрела:</label>
+        <input type="text" id="strel_x6" /><br />
+        <label>Введите координату y шестого выстрела:</label>
+        <input type="text" id="strel_y6" /><br />
+        <input type="button" value="Проверить" onclick="popal('strel_x6', 'strel_y6', 'rad', 6)" /><br />
+        <p>Результат: <span id="itog6"></span><p />
+        <label>Введите координату x седьмого выстрела:</label>
+        <input type="text" id="strel_x7" /><br />
+        <label>Введите координату y седьмого выстрела:</label>
+        <input type="text" id="strel_y7" /><br />
+        <input type="button" value="Проверить" onclick="popal('strel_x7', 'strel_y7', 'rad', 7)" /><br />
+        <p>Результат: <span id="itog7"></span><p />
+        <label>Введите координату x восьмого выстрела:</label>
+        <input type="text" id="strel_x8" /><br />
+        <label>Введите координату y восьмого выстрела:</label>
+        <input type="text" id="strel_y8" /><br />
+        <input type="button" value="Проверить" onclick="popal('strel_x8', 'strel_y8', 'rad', 8)" /><br />
+        <p>Результат: <span id="itog8"></span><p />
+        <label>Введите координату x девятого выстрела:</label>
+        <input type="text" id="strel_x9" /><br />
+        <label>Введите координату y девятого выстрела:</label>
+        <input type="text" id="strel_y9" /><br />
+        <input type="button" value="Проверить" onclick="popal('strel_x9', 'strel_y9', 'rad', 9)" /><br />
+        <p>Результат: <span id="itog9"></span><p />
+        <label>Введите координату x десятого выстрела:</label>
+        <input type="text" id="strel_x10" /><br />
+        <label>Введите координату y десятого выстрела:</label>
+        <input type="text" id="strel_y10" /><br />
+        <input type="button" value="Проверить" onclick="popal('strel_x10', 'strel_y10', 'rad', 10)" /><br />
+        <p>Результат: <span id="itog10"></span><p />
+
+    </div>
+    <script>
+        form1.style.display = "block";
+        form2.style.display = "none";
+        form3.style.display = "none";
+        form4.style.display = "none";
+        form5.style.display = "none";
+        function showForm(formNumber) {
+            form1.style.display = "none";
+            form2.style.display = "none";
+            form3.style.display = "none";
+            form4.style.display = "none";
+            form5.style.display = "none";
+            let choosenForm = document.getElementById("form" + formNumber);
+            choosenForm.style.display = "block";
+        }
+
+        function calculate() {
+            let x = +input_x.value;
+            output_answer.innerText = Math.log(Math.abs(Math.cos(x))) / Math.log(1 + Math.pow(x, 2));
+        }
+        function treugolnik() {
+            let a = +input_a.value;
+            s_answer.innerText = (Math.sqrt(3) * Math.pow(a, 2)) / 4;
+            h_answer.innerText = (Math.sqrt(3) * a) / 2;
+            rv_answer.innerText = (a * Math.sqrt(3)) / 6;
+            ro_answer.innerText = (a * Math.sqrt(3)) / 3;
+        }
+        function sravnenie() {
+            let a = +storona_a.value;
+            let b = +storona_b.value;
+            let c = +storona_c.value;
+            let d = +storona_d.value;
+            if ((((a / c) == (b / d))) || ((a / d) == (b / c))) {
+                answer.innerText = "Yes";
+            }
+            else {
+                answer.innerText = "No";
+            }
+        }
+        function znach_f() {
+            let x = +argument.value;
+            if (((-9 <= x) && (x < -7)) || ((4 <= x) && (x <= 7))) {
+                f_answer.innerText = 0;
+            }
+            else if ((-7 <= x) && (x < -3)) {
+                f_answer.innerText = x + 7;
+            }
+            else if ((-3 <= x) && (x < -2)) {
+                f_answer.innerText = 4;
+            }
+            else if ((-2 <= x) && (x < 2)) {
+                f_answer.innerText = Math.pow(x, 2);
+            }
+            else if ((2 <= x) && (x < 4)) {
+                f_answer.innerText = -2 * x + 8;
+            }
+            else {
+                f_answer.innerText = "Значение функции выходит за границы графика";
+            }
+        }
+        function popal(x, y, r, n) {
+            let koord_x = parseFloat(document.getElementById(x).value);
+            let koord_y = parseFloat(document.getElementById(y).value);
+            let radius = parseFloat(document.getElementById(r).value);
+            let itog = document.getElementById("itog" + n);
+            if ((koord_y >= 0) && (koord_x >= 0) && (Math.pow(koord_x - 1, 2) <= koord_y) && ((Math.pow(koord_x, 2) + Math.pow(koord_y, 2)) <= Math.pow(radius, 2))) {
+                itog.innerText = "Попадание";
+            }
+            else if ((koord_y <= 0) && (koord_x <= 0) && ((Math.pow(koord_x, 2) + Math.pow(koord_y, 2)) <= Math.pow(radius, 2))) {
+                itog.innerText = "Попадание";
+            }
+            else {
+                itog.innerText = "Промах";
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
